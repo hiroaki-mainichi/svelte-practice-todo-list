@@ -1,6 +1,8 @@
 <script>
     // TodoItem component imported
     import TodoItem from './TodoItem.svelte';
+    // Theme toggle function imported
+    import Button from './Button.svelte';
 
     let newTodoTitle = '';
     let currentFilter = 'all';
@@ -87,11 +89,6 @@
         max-width: 800px;
         margin: 10px auto;
     }
-    .logo {
-        display: block;
-        margin: 20px auto;
-        width: 50%;
-    }
     .todo-input {
         width: 100%;
         padding: 10px, 20px;
@@ -127,8 +124,8 @@
 </style>
 
 <div class="container">
-    <a href="https://codingthesmartway.com" target="_blank"><img src={'/img/CTSWLogo.png'} alt="svelte logo" class="logo"></a>
     <h2>Svelte Todo App</h2>
+    <Button>Toggle Theme</Button>
     <input type="text" class="todo-input" placeholder="Insert todo item ..." bind:value={newTodoTitle} on:keydown={addTodo}>
     <!-- iterate through filetered todo list -->
     {#each filteredTodos as todo}
